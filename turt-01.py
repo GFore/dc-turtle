@@ -23,27 +23,25 @@ def unsquare(size):
 def star():
     color('green', 'blue')
     begin_fill()
-    while True:
+    cnt = 0
+    while cnt < 36:
         forward(200)
         left(170)
         if abs(pos()) < 1:
             break
+        cnt += 1
     end_fill()
 
-speed(10)
-for i in range(20):
+speed(0)        # fastest speed
+x = xcor()      # save position for move back to center
+y = ycor()
+
+for i in range(80):
     square(200)
     right(180)
     unsquare(200)
     right(25)
-# forward(300)
-# right(180)
-for i in range(5):
-    star()
-    right(45)
-    penup()
-    forward(200)
-    pendown()
-# done()
-input()
 
+setpos(x+100, y-20)     # move to position to draw star in middle
+star()
+input()  # dummy input to keep window open
