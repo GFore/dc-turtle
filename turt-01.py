@@ -34,6 +34,7 @@ def star():
         cnt += 1
     end_fill()
 
+print('Hey!')
 speed(0)        # fastest speed
 x = xcor()      # save position for move back to center
 y = ycor()
